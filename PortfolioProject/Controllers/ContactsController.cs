@@ -22,8 +22,8 @@ public class ContactsController : Controller
     [HttpPost]
     public async Task<IActionResult> Contacts([FromForm] User userData)
     {
-        
-            var message = new Message(new string[] { "fakenayfront@yandex.ru" }, "Users Data",
+
+            var message = new Message(new string[] { "fakenayfront@gmail.com" }, "Users Data",
                 $"Email:{userData.Email}\nName:{userData.Name}\nSubject:{userData.Subject}\nMessage:\n{userData.Message}");
             await EmailSender.SendEmailAsync(message);
             return Ok();
